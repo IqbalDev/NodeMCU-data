@@ -118,7 +118,7 @@ void loop(){
               output5State = "off";
               digitalWrite(output5, LOW);
               ////////
-            } else if (header.indexOf("GET /4/on") >= 0) {
+             } else if (header.indexOf("GET /4/on") >= 0) {
               Serial.println("GPIO 4 on");
               output4State = "on";
               digitalWrite(output4, HIGH);
@@ -157,13 +157,16 @@ void loop(){
             client.println(".isi a:hover { color: green !important; }");
             client.println(".isi { position: absolute; display: none; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); z-index: 1; background-color: rgba(0,0,0,0.7); border-radius: 6px; }");
             client.println(".isi a { font-weight: bold; color: white; }");
-            client.println(".isi a:hover { font-weight: bold; color: yellow !important; background: #222 !important; width: 160px; border-radius: 6px; }</style></head>");
+            client.println(".isi a:hover { font-weight: bold; color: yellow !important; background: #222 !important; width: 160px; border-radius: 6px; }");
+            client.println(".box { margin: auto; color: white; font-weight: bold; padding: 10px; font-size: 30px }");
 
+            client.println(".iqbal { display: flex; } </style></head>");
+                        
 
             // dropdown
-            client.println("<div class='menu'>");
+            client.println("<div class='menu'> ");
+            client.println("  <nav class='iqbal'>");
             client.println("  <ul> <li class='dropdown'> <a href='#'> Menu </a> ");
-
             client.println("    <ul class='isi'> ");
             client.println("      <li><a href='https://darkarticle.000webhostapp.com/' target='_blank'> Website Saya </a></li>");
             client.println("      <li><a href='https://wa.me/62895424726100?text=Hallo Iqbal' target='_blank'> Kontak Admin </a></li>");
@@ -171,9 +174,11 @@ void loop(){
             client.println("      <li><a href='https://www.codepolitan.com/cara-enjoy-memulai-belajar-pemrograman' target='_blank'> Belajar Coding </a></li>");
             client.println("    </ul>");
             client.println("  </li> </ul>");
+            client.println("  <div class='box'><em>Iqbal Dev </em></div>");
+            client.println("  </nav>");
             client.println("</div>");
-            // Judul Halaman Web
-            client.println("<body><h1>Iqbal Developer</h1>");
+            
+            client.println("<body><h1>-----------</h1>");
 //          client.println("Iqbal ID");
             // Tampilkan kondisi saat ini, dan tombol ON / OFF untuk GPIO 16 
             client.println("<p><b>.</b></p>");
